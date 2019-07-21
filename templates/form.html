@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+    <title>{% block title %}{% endblock %} - Catharsis</title>
+    {% endblock %}
+</head>
+<body>
+    <div id="content">{% block content %}{% endblock%}
+      <span>Pour envoyer un message direct au Staff, complétez le formulaire ci-dessous.</span>
+      <span>Nous vous contacterons en MP avec la réponse !</span>
+      <form action="{{ url_for('send') }}" method="post">
+    Nom de votre personnage:<br>
+    <input type="text" name="name">
+    <br>
+    Votre message au staff:<br>
+    <textarea name="message"></textarea>
+    <br><br>
+    <input type="submit" id = "submitbutton" value="Submit">
+  </form> </div>
+    <div id="footer">
+        {% block footer %}
+        {% endblock %}
+    </div>
+</body>
+</html>

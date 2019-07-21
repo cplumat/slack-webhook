@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+    <title>{% block title %}{% endblock %} - Catharsis</title>
+    {% endblock %}
+</head>
+<body>
+    <div id="content">{% block content %}{% endblock%}
+      <span>Merci pour votre message, nous allons vous contacter par MP !</span>
+      <a href="{{ url_for('form') }}">Retourner au formulaire !</a>
+       </div>
+    <div id="footer">
+        {% block footer %}
+        {% endblock %}
+    </div>
+</body>
+</html>
